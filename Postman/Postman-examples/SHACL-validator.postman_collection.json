@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "c593913e-2fb3-4b48-a20a-d0f5b07179fc",
+		"name": "SHACL-validator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://0.0.0.0:8080/shacl/UCO/api/validate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"validationType\": \"large\",\n    \"embeddingMethod\": \"URL\",\n    \"contentToValidate\": \"https://raw.githubusercontent.com/casework/CASE-Examples/master/examples/illustrations/device/device.json\",\n    \"contentSyntax\": \"application/ld+json\",\n    \"reportSyntax\": \"application/ld+json\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8080/shacl/UCO/api/validate",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"shacl",
+						"UCO",
+						"api",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8080/shacl/UCO/api/validate (data)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"validationType\": \"large\",\n    \"embeddingMethod\": \"BASE64\",\n    \"contentSyntax\": \"application/ld+json\",\n    \"contentToValidate\": \"ewogICAgIkBjb250ZXh0IjogewogICAgICAgICJAdm9jYWIiOiAiaHR0cDovL2V4YW1wbGUub3JnL2xvY2FsIyIsCiAgICAgICAgImtiIjogImh0dHA6Ly9leGFtcGxlLm9yZy9rYi8iLAogICAgICAgICJhY21lIjogImh0dHA6Ly9jdXN0b21wYi5hY21lLm9yZy9jb3JlIyIsCiAgICAgICAgImRyYWZ0IjogImh0dHA6Ly9leGFtcGxlLm9yZy9kcmFmdCMiLAogICAgICAgICJ1Y28tY29yZSI6ICJodHRwczovL29udG9sb2d5LnVuaWZpZWRjeWJlcm9udG9sb2d5Lm9yZy91Y28vY29yZS8iLAogICAgICAgICJ1Y28taWRlbnRpdHkiOiAiaHR0cHM6Ly9vbnRvbG9neS51bmlmaWVkY3liZXJvbnRvbG9neS5vcmcvdWNvL2lkZW50aXR5LyIsCiAgICAgICAgInVjby1sb2NhdGlvbiI6ICJodHRwczovL29udG9sb2d5LnVuaWZpZWRjeWJlcm9udG9sb2d5Lm9yZy91Y28vbG9jYXRpb24vIiwKICAgICAgICAidWNvLW9ic2VydmFibGUiOiAiaHR0cHM6Ly9vbnRvbG9neS51bmlmaWVkY3liZXJvbnRvbG9neS5vcmcvdWNvL29ic2VydmFibGUvIiwKICAgICAgICAieHNkIjogImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIyIKICAgIH0sCiAgICAiQGdyYXBoIjogWwogICAgICAgIHsKICAgICAgICAgICAgIkBpZCI6ICJrYjpvcmdhbml6YXRpb24tYzI0MGNmMzctMDU1Ni00MzliLTlhNTEtMWNhNDE3MzIwMTBkIiwKICAgICAgICAgICAgIkB0eXBlIjogInVjby1pZGVudGl0eTpPcmdhbml6YXRpb24iLAogICAgICAgICAgICAidWNvLWNvcmU6bmFtZSI6ICJEZWxsIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgICAiQGlkIjogImtiOm9yZ2FuaXphdGlvbi1jYzBlMDY2Ny1lYWRmLTRiMmUtOTYxOC0zZjYyYjFiZGFlMjYiLAogICAgICAgICAgICAiQHR5cGUiOiAidWNvLWlkZW50aXR5Ok9yZ2FuaXphdGlvbiIsCiAgICAgICAgICAgICJ1Y28tY29yZTpuYW1lIjogIk1pY3Jvc29mdCIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICAgIkBpZCI6ICJrYjpmb3JlbnNpY19sYWJfY29tcHV0ZXIxLXV1aWQiLAogICAgICAgICAgICAiQHR5cGUiOiAidWNvLW9ic2VydmFibGU6RGV2aWNlIiwKICAgICAgICAgICAgImxvY2F0aW9uIjogewogICAgICAgICAgICAgICAgIkBpZCI6ICJrYjpmb3JlbnNpY19sYWIxLXV1aWQiCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgICJ1Y28tY29yZTpoYXNGYWNldCI6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAiQHR5cGUiOiAidWNvLW9ic2VydmFibGU6RGV2aWNlRmFjZXQiLAogICAgICAgICAgICAgICAgICAgICJ1Y28tb2JzZXJ2YWJsZTpkZXZpY2VUeXBlIjogIkNvbXB1dGVyIiwKICAgICAgICAgICAgICAgICAgICAidWNvLW9ic2VydmFibGU6bWFudWZhY3R1cmVyIjogewogICAgICAgICAgICAgICAgICAgICAgICAiQGlkIjogImtiOm9yZ2FuaXphdGlvbi1jMjQwY2YzNy0wNTU2LTQzOWItOWE1MS0xY2E0MTczMjAxMGQiCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAidWNvLW9ic2VydmFibGU6bW9kZWwiOiAiSW5zcGlyb24gNTAwMCIsCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOnNlcmlhbE51bWJlciI6ICJEMTIzNDU2NyIKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgIkB0eXBlIjogInVjby1vYnNlcnZhYmxlOk9wZXJhdGluZ1N5c3RlbUZhY2V0IiwKICAgICAgICAgICAgICAgICAgICAidWNvLWNvcmU6bmFtZSI6ICJXaW5kb3dzIDcgVWx0aW1hdGUgRWRpdGlvbiIsCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOm1hbnVmYWN0dXJlciI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgIkBpZCI6ICJrYjpvcmdhbml6YXRpb24tY2MwZTA2NjctZWFkZi00YjJlLTk2MTgtM2Y2MmIxYmRhZTI2IgogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOnZlcnNpb24iOiAiNi4xLjc2MDEgU2VydmljZSBQYWNrIDEgQnVpbGQgNzYwMSIsCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOmluc3RhbGxEYXRlIjogewogICAgICAgICAgICAgICAgICAgICAgICAiQHR5cGUiOiAieHNkOmRhdGVUaW1lIiwKICAgICAgICAgICAgICAgICAgICAgICAgIkB2YWx1ZSI6ICIyMDE5LTA3LTEwVDE2OjMzOjQyWiIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6ICJ1Y28tb2JzZXJ2YWJsZTpDb21wdXRlclNwZWNpZmljYXRpb25GYWNldCIsCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOmJpb3NWZXJzaW9uIjogIkUxNzYySU1TLjEwTSIsCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOmNwdUZhbWlseSI6ICJJbnRlbCBQZW50aXVtIGk3IiwKICAgICAgICAgICAgICAgICAgICAidWNvLW9ic2VydmFibGU6dG90YWxSYW0iOiA0Mjk0OTY3Mjk2CiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6ICJ1Y28tb2JzZXJ2YWJsZTpEb21haW5OYW1lRmFjZXQiLAogICAgICAgICAgICAgICAgICAgICJ1Y28tb2JzZXJ2YWJsZTp2YWx1ZSI6ICJkZmwubG9jYWwiLAogICAgICAgICAgICAgICAgICAgICJ1Y28tb2JzZXJ2YWJsZTppc1RMRCI6IGZhbHNlCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6ICJ1Y28tb2JzZXJ2YWJsZTpJUHY0QWRkcmVzc0ZhY2V0IiwKICAgICAgICAgICAgICAgICAgICAidWNvLW9ic2VydmFibGU6YWRkcmVzc1ZhbHVlIjogIjE5Mi4xNjguMS4xNDUiCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6IFsKICAgICAgICAgICAgICAgICAgICAgICAgImFjbWU6SW52ZW50b3J5Q29tcHV0ZXJGYWNldCIsCiAgICAgICAgICAgICAgICAgICAgICAgICJ1Y28tY29yZTpGYWNldCIKICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICAgICJhY21lOm5hbWUiOiAiREZMLTAzIiwKICAgICAgICAgICAgICAgICAgICAiYWNtZTppbnZlbnRvcnlOdW1iZXIiOiAiMTA1MDMiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0KICAgICAgICB9CiAgICBdCn0=\",\n    \"reportSyntax\": \"application/ld+json\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8080/shacl/UCO/api/validate",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"shacl",
+						"UCO",
+						"api",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8080/shacl/api/info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://0.0.0.0:8080/shacl/api/info",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"shacl",
+						"api",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:8080/shacl/UCO/api/info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://0.0.0.0:8080/shacl/UCO/api/info",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8080",
+					"path": [
+						"shacl",
+						"UCO",
+						"api",
+						"info"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
