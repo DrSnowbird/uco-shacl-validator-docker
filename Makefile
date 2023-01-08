@@ -119,6 +119,7 @@ up:
 	#else \
 	#	docker-compose up --remove-orphans -d ; \
 	#fi
+	#./stop.sh
 	docker-compose up --remove-orphans -d
 	docker ps | grep $(DOCKER_IMAGE)
 	@echo ">>> Total Dockder images Build using time in seconds: $$(($$(date +%s)-$(TIME_START))) seconds"

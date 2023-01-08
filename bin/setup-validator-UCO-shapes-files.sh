@@ -58,8 +58,6 @@ fi
 
 ## -- copy *.ttl to validator/resources/UCO-1.1.0 folder: -
 ## -- cp -r validator/resources/UCO-1.1.0 validator/resources/UCO
-#if [ ! -s ${UCO_RESOURCE_DIR}/UCO-${UCO_VERSION} ]; then
-#if [ ! -s ${UCO_RESOURCE_DIR}/UCO/shapes ]; then
 if [ -s ${UCO_RESOURCE_DIR} ]; then
     # backup existing resources/UCO dir:
     mkdir -p ${PROJ_DIR}/SAVE
@@ -68,8 +66,7 @@ if [ -s ${UCO_RESOURCE_DIR} ]; then
         mv ${VALIDATOR_RESOURCES_CONFIG} ${PROJ_DIR}/SAVE/resources_$(basename ${VALIDATOR_RESOURCES_CONFIG})_$(date +"%Y-%m-%d-%H-%M-%S")
     fi
 fi
-if [ ! -s ${UCO_RESOURCE_DIR}/UCO/shapes ]; then
-    ## -- save old folder: --
+if [ ! -s ${UCO_SHAPES_DIR} ]; then
     mkdir -p ${UCO_SHAPES_DIR}
 fi
 

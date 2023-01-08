@@ -26,22 +26,32 @@ COPY --chown=${USER}:${USER} ${APP_MAIN} ${APP_HOME}/setup.sh
 RUN sudo chown -R ${USER}:${USER} ${APP_HOME} && \
     sudo chmod +x /docker-entrypoint.sh ${APP_HOME}/setup.sh 
 
-#########################################
-##### ---- Docker Entrypoint : ---- #####
-#########################################
-ENTRYPOINT ["/docker-entrypoint.sh"]
-
 #####################################
-##### ---- user: developer ---- #####
+##### ---- APP: download   ---- #####
 #####################################
-WORKDIR ${APP_HOME}
-USER ${USER}
 COPY --chown=${USER}:${USER} validator ${APP_HOME}/validator
 COPY --chown=${USER}:${USER} scripts/run-validator-as-java-inside-docker.sh ${APP_HOME}/run-validator-as-java-inside-docker.sh
 ARG VALIDATOR_ZIP_URL=${VALIDATOR_ZIP:-https://www.itb.ec.europa.eu/shacl-jar/any/validator.zip}
 RUN VALIDATOR_ZIP=$(basename ${VALIDATOR_ZIP_URL}) && wget -q ${VALIDATOR_ZIP_URL} && cp validator.zip ${APP_HOME}/validator/ && \
     unzip ${VALIDATOR_ZIP} && cp validator.jar ${APP_HOME}/validator/validator.jar && ls -al  && \
     find ${APP_HOME}
+
+############################################
+##### ---- APP: download (Local)  ---- #####
+############################################
+##
+## (use the lines below instead of the above when the remote site is not available!)
+##
+#COPY --chown=${USER}:${USER} validator ${APP_HOME}/validator
+#COPY --chown=${USER}:${USER} scripts/run-validator-as-java-inside-docker.sh ${APP_HOME}/run-validator-as-java-inside-docker.sh
+#COPY --chown=${USER}:${USER} jar ${APP_HOME}/validator/validator.jar && ls -al && find ${APP_HOME}
+
+#########################################
+##### ---- Docker Entrypoint : ---- #####
+#########################################
+WORKDIR ${APP_HOME}
+USER ${USER}
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
 # && rm -f ${VALIDATOR_ZIP} && \
 # 

@@ -1,9 +1,9 @@
 version: '3.1' 
 
 services:
-  shacl-validator-docker:
-    container_name: shacl-validator-docker
-    image: openkbs/shacl-validator-docker
+  uco-shacl-validator-docker:
+    container_name: uco-shacl-validator-docker
+    image: openkbs/uco-shacl-validator-docker
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
     env_file:
       - ./.env
     environment:
-      - CONTAINER_NAME=shacl-validator-docker
+      - CONTAINER_NAME=uco-shacl-validator-docker
       - USER_ID=${USER_ID:-1000}
       - GROUP_ID=${GROUP_ID:-1000}
       # - APP_HOME=${APP_HOME:-/home/developer/app}
@@ -43,15 +43,15 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       #- ./certificates:/home/developer/certificates
       ## ==== Use $HOME/data-docker as base directory: ====
-      #- $HOME/data-docker/shacl-validator-docker/data:/home/developer/data
-      #- $HOME/data-docker/shacl-validator-docker/workspace:/home/developer/workspace
+      #- $HOME/data-docker/uco-shacl-validator-docker/data:/home/developer/data
+      #- $HOME/data-docker/uco-shacl-validator-docker/workspace:/home/developer/workspace
       ## ==== Use current directory as root for mapping Volumes: ====
       ## (You need to manually create those child directory: ./data, ./workspace, and others)
       #- ./data:/home/developer/data
       #- ./workspace:/home/developer/workspace
       ## ==== App's additional mapping Volumes: ====
-      - /mnt/user1/DATA/git-public/RDF/shacl-validator-docker/validator/resources:/home/developer/app/validator/resources
-      - /mnt/user1/DATA/git-public/RDF/shacl-validator-docker/data:/home/developer/data
+      - /mnt/user1/DATA/git-public/RDF/uco-shacl-validator-docker/validator/resources:/home/developer/app/validator/resources
+      - /mnt/user1/DATA/git-public/RDF/uco-shacl-validator-docker/data:/home/developer/data
 
     ## -------------------------------
     ## -- Change to your specific port
@@ -68,7 +68,7 @@ services:
     #  - dev_network
 
 #volumes:
-#    shacl-validator-docker_volume:
+#    uco-shacl-validator-docker_volume:
 #        external: false
 
 #networks:
