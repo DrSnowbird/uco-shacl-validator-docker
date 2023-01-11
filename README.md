@@ -1,4 +1,4 @@
-# UCO-Shacle-Validator-Docker
+# UCO-SHACL-Validator-Docker
 * A SHACL Validator customized for UCO Ontology validation
 ```
 If [ you are looking for such a requirement as a Container ]:
