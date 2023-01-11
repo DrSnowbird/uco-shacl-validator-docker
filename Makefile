@@ -126,7 +126,7 @@ up:
 
 down:
 	docker-compose down
-	docker ps | grep $(DOCKER_IMAGE)
+	#docker ps | grep $(DOCKER_IMAGE)
 	@echo ">>> Total Dockder images Build using time in seconds: $$(($$(date +%s)-$(TIME_START))) seconds"
 
 down-rm:

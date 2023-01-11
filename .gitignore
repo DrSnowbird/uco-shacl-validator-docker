@@ -36,6 +36,7 @@ uco/
 # tmp files
 **/*BACKUP/
 **/*tmp/
+**/*SAVE
 **/*SAVE/
 
 # additional
