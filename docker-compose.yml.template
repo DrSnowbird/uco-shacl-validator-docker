@@ -14,24 +14,8 @@ services:
       - CONTAINER_NAME={{CONTAINER_NAME}}
       - USER_ID=${USER_ID:-1000}
       - GROUP_ID=${GROUP_ID:-1000}
-      # - APP_HOME=${APP_HOME:-/home/developer/app}
-      # - APP_MAIN=${APP_MAIN:-setup.sh}
       - DOCKER_HOST_IP=${DOCKER_HOST_IP:-{{DOCKER_HOST_IP}}}
       - DOCKER_HOST_NAME=${DOCKER_HOST_NAME:-{{DOCKER_HOST_NAME}}}
-      # ==== X11 Use only ====
-      #- DISPLAY=$DISPLAY
-      #- DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
-      # ==== vnc/no-vnc ====
-      #- WINDOW_MANAGER=xfce 
-      #- VNC_RESOLUTION=1280x800 
-      #- VNC_PW=vncpassword 
-    ## -------------------------------
-    ## -- Audio sound setup:
-    ## -------------------------------
-    #group_add:
-    #  - audio
-    #devices:
-    #  - "/dev/snd:/dev/snd"
     ## -------------------------------------------
     ## -- Change to your specific Volumes Mapping:
     ## -------------------------------------------
@@ -39,7 +23,6 @@ services:
       ## ==== Common mapping: ====
       - /etc/hosts:/etc/hosts
       - /dev/shm:/dev/shm
-      #- /tmp/.X11-unix:/tmp/.X11-unix
       - /var/run/docker.sock:/var/run/docker.sock
       #- ./certificates:/home/developer/certificates
       ## ==== Use $HOME/data-docker as base directory: ====
