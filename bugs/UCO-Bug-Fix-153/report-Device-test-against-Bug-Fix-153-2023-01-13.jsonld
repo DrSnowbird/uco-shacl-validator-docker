@@ -1,0 +1,40 @@
+{
+  "@id" : "_:b0",
+  "@type" : "sh:ValidationReport",
+  "sh:conforms" : true,
+  "@context" : {
+    "conforms" : {
+      "@id" : "http://www.w3.org/ns/shacl#conforms",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "role" : "https://ontology.unifiedcyberontology.org/uco/role/",
+    "uco-owl" : "https://ontology.unifiedcyberontology.org/owl/",
+    "configuration" : "https://ontology.unifiedcyberontology.org/uco/configuration/",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "pattern" : "https://ontology.unifiedcyberontology.org/uco/pattern/",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "vocabulary" : "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
+    "uco-co" : "https://ontology.unifiedcyberontology.org/co/",
+    "sh" : "http://www.w3.org/ns/shacl#",
+    "identity" : "https://ontology.unifiedcyberontology.org/uco/identity/",
+    "kb" : "http://example.org/kb/",
+    "acme" : "http://custompb.acme.org/core#",
+    "action" : "https://ontology.unifiedcyberontology.org/uco/action/",
+    "victim" : "https://ontology.unifiedcyberontology.org/uco/victim/",
+    "graphql" : "http://datashapes.org/graphql#",
+    "types" : "https://ontology.unifiedcyberontology.org/uco/types/",
+    "tosh" : "http://topbraid.org/tosh#",
+    "co" : "http://purl.org/co/",
+    "analysis" : "https://ontology.unifiedcyberontology.org/uco/analysis/",
+    "tool" : "https://ontology.unifiedcyberontology.org/uco/tool/",
+    "core" : "https://ontology.unifiedcyberontology.org/uco/core/",
+    "marking" : "https://ontology.unifiedcyberontology.org/uco/marking/",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "observable" : "https://ontology.unifiedcyberontology.org/uco/observable/",
+    "location" : "https://ontology.unifiedcyberontology.org/uco/location/",
+    "time" : "https://ontology.unifiedcyberontology.org/uco/time/",
+    "swa" : "http://topbraid.org/swa#",
+    "dash" : "http://datashapes.org/dash#"
+  }
+}

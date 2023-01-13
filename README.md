@@ -1,4 +1,7 @@
 # UCO-SHACL-Validator-Docker
+
+* (note) The UCO version used as default is using UCO Bug-Fix-153 branch's UCO shapes. Once the official next release of UCO SHACL shapes is published. You can re-run the bin/setup-validator-UCO-shapes-files.sh to use the latest UCO SHACL for this validator docker to use.
+
 * A SHACL Validator customized for UCO Ontology validation
 ```
 If [ you are looking for such a requirement as a Container ]:
