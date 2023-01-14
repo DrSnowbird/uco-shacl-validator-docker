@@ -1,11 +1,22 @@
-#!/bin/bash -x
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo 
+    echo -e ">>> Usage:"
+    echo -e ">>> $0 <bug fix branch, e.g., Bug-Fix-513>"
+    echo -e ">>> e.g."
+    echo -e ">>> $0 Bug-Fix-513"
+    echo
+    exit 0
+fi
 
 cd $(dirname $0)/..
 PROJ_DIR=$(realpath ${0%/*}/..)
 
 echo -e ">>> PROJ_DIR=${PROJ_DIR}"
 
-GIT_BRANCH=Bug-Fix-513
+#GIT_BRANCH=${1:-Bug-Fix-513}
+GIT_BRANCH=${1:-master}
 
 VALIDATOR_RESOURCES=${PROJ_DIR}/validator/resources
 VALIDATOR_RESOURCES_CONFIG=${PROJ_DIR}/validator/resources/UCO/config.properties
@@ -17,37 +28,36 @@ WORK_DIR=${PROJ_DIR}/uco
 
 UCO_LATEST_VERSION="`curl --silent https://api.github.com/repos/ucoProject/UCO/releases/latest | jq -r .tag_name | sed 's/^v//' `"
 UCO_VERSION=${UCO_VERSION:-$UCO_LATEST_VERSION}
-UCO_DIR=${WORK_DIR}/UCO-${UCO_VERSION}
+#UCO_DIR=${WORK_DIR}/UCO-${UCO_VERSION}
 UCO_HOME=${WORK_DIR}/UCO
 
-function download_UCO() {
+function clone_UCO() {
     if [ ! -s ${WORK_DIR} ]; then
         mkdir -p ${WORK_DIR}
     fi
     cd ${WORK_DIR}
-    ZIP_URL=https://github.com/ucoProject/UCO/archive/refs/tags/${UCO_VERSION}.zip
-    wget --no-check-certificate ${ZIP_URL}
-    if [ ! -s ${UCO_VERSION}.zip ]; then
-        echo ">>> ERROR: download ${UCO_VERSION}.zip : failed! Abort"
+    
+    if [ ! -s ${UCO_HOME} ]; then
+        GIT_URL=https://github.com/ucoProject/UCO.git
+        git clone ${GIT_URL} ${UCO_HOME}
+        echo -e ">>>>>>>>>> current dir: $PWD"
+        cd ${UCO_HOME}
+        git switch ${GIT_BRANCH}
+    fi
+
+    if [ ! -s ${UCO_HOME} ]; then
+        echo -e ">>> ERROR: ${UCO_HOME}: UCO folder not found after git clone! Abort!"
         exit 1
     else
-        ls -al *.zip
-        unzip ${UCO_VERSION}.zip
-    
-        if [ ! -s ${UCO_DIR} ]; then
-            echo -e ">>> ERROR: ${UCO_DIR}: UCO folder not found after download and unzip"
-            exit 1
-        else
-            echo -e ">>> OK: ${UCO_DIR}"
-            if [ -s ${UCO_HOME} ]; then 
-                rm -f ${UCO_HOME}
-            fi
-            ln -s ${UCO_DIR} ${UCO_HOME}
-            ls -al ${UCO_HOME}
-        fi
+        echo -e ">>> OK: ${UCO_HOME}"
+        ls -al ${UCO_HOME}
     fi
+
     cd ${PROJ_DIR}    
 } 
+
+clone_UCO
+
 
 #if [ ! -s ${UCO_DIR} ]; then
 #    ## -- need to download UCO specific version: --
@@ -73,7 +83,7 @@ if [ ! -s ${UCO_SHAPES_DIR} ]; then
 fi
 
 ## -- find all *.ttl files: --
-TTL_FILES=$(find ${UCO_DIR}/ontology -name "*.ttl")
+TTL_FILES=$(find ${UCO_HOME}/ontology -name "*.ttl")
 SHAPES_LIST=""
 for ttl in $TTL_FILES; do
     cp $ttl ${UCO_SHAPES_DIR}/
