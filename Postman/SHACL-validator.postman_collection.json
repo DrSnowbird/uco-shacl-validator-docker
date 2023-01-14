@@ -18,7 +18,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"validationType\": \"large\",\n    \"embeddingMethod\": \"URL\",\n    \"contentToValidate\": \"https://raw.githubusercontent.com/casework/CASE-Examples/master/examples/illustrations/device/device.json\",\n    \"contentSyntax\": \"application/ld+json\",\n    \"reportSyntax\": \"application/ld+json\"\n}",
+					"raw": "{\n    \"validationType\": \"core\",\n    \"embeddingMethod\": \"URL\",\n    \"contentToValidate\": \"https://raw.githubusercontent.com/casework/CASE-Examples/master/examples/illustrations/device/device.json\",\n    \"contentSyntax\": \"application/ld+json\",\n    \"reportSyntax\": \"application/ld+json\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -46,7 +46,7 @@
 			"response": []
 		},
 		{
-			"name": "shacl/UCO/api/validate URI",
+			"name": "shacl/UCO/api/validate URI Docker Copy",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -58,7 +58,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"validationType\": \"large\",\n    \"embeddingMethod\": \"URL\",\n    \"contentToValidate\": \"https://raw.githubusercontent.com/casework/CASE-Examples/master/examples/illustrations/device/device.json\",\n    \"contentSyntax\": \"application/ld+json\",\n    \"reportSyntax\": \"application/ld+json\"\n}",
+					"raw": "{\n    \"validationType\": \"full\",\n    \"embeddingMethod\": \"URI\",\n    \"contentToValidate\": \"https://raw.githubusercontent.com/casework/CASE-Examples/master/examples/illustrations/location/location.json\",\n    \"contentSyntax\": \"application/ld+json\",\n    \"reportSyntax\": \"application/ld+json\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -66,7 +66,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://0.0.0.0:8080/shacl/UCO/api/validate",
+					"raw": "http://0.0.0.0:58088/shacl/UCO/api/validate",
 					"protocol": "http",
 					"host": [
 						"0",
@@ -74,7 +74,7 @@
 						"0",
 						"0"
 					],
-					"port": "8080",
+					"port": "58088",
 					"path": [
 						"shacl",
 						"UCO",
@@ -103,7 +103,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"validationType\": \"large\",\n    \"embeddingMethod\": \"BASE64\",\n    \"contentSyntax\": \"application/ld+json\",\n    \"contentToValidate\": \"ewogICAgIkBjb250ZXh0IjogewogICAgICAgICJAdm9jYWIiOiAiaHR0cDovL2V4YW1wbGUub3JnL2xvY2FsIyIsCiAgICAgICAgImtiIjogImh0dHA6Ly9leGFtcGxlLm9yZy9rYi8iLAogICAgICAgICJhY21lIjogImh0dHA6Ly9jdXN0b21wYi5hY21lLm9yZy9jb3JlIyIsCiAgICAgICAgImRyYWZ0IjogImh0dHA6Ly9leGFtcGxlLm9yZy9kcmFmdCMiLAogICAgICAgICJ1Y28tY29yZSI6ICJodHRwczovL29udG9sb2d5LnVuaWZpZWRjeWJlcm9udG9sb2d5Lm9yZy91Y28vY29yZS8iLAogICAgICAgICJ1Y28taWRlbnRpdHkiOiAiaHR0cHM6Ly9vbnRvbG9neS51bmlmaWVkY3liZXJvbnRvbG9neS5vcmcvdWNvL2lkZW50aXR5LyIsCiAgICAgICAgInVjby1sb2NhdGlvbiI6ICJodHRwczovL29udG9sb2d5LnVuaWZpZWRjeWJlcm9udG9sb2d5Lm9yZy91Y28vbG9jYXRpb24vIiwKICAgICAgICAidWNvLW9ic2VydmFibGUiOiAiaHR0cHM6Ly9vbnRvbG9neS51bmlmaWVkY3liZXJvbnRvbG9neS5vcmcvdWNvL29ic2VydmFibGUvIiwKICAgICAgICAieHNkIjogImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIyIKICAgIH0sCiAgICAiQGdyYXBoIjogWwogICAgICAgIHsKICAgICAgICAgICAgIkBpZCI6ICJrYjpvcmdhbml6YXRpb24tYzI0MGNmMzctMDU1Ni00MzliLTlhNTEtMWNhNDE3MzIwMTBkIiwKICAgICAgICAgICAgIkB0eXBlIjogInVjby1pZGVudGl0eTpPcmdhbml6YXRpb24iLAogICAgICAgICAgICAidWNvLWNvcmU6bmFtZSI6ICJEZWxsIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgICAiQGlkIjogImtiOm9yZ2FuaXphdGlvbi1jYzBlMDY2Ny1lYWRmLTRiMmUtOTYxOC0zZjYyYjFiZGFlMjYiLAogICAgICAgICAgICAiQHR5cGUiOiAidWNvLWlkZW50aXR5Ok9yZ2FuaXphdGlvbiIsCiAgICAgICAgICAgICJ1Y28tY29yZTpuYW1lIjogIk1pY3Jvc29mdCIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICAgIkBpZCI6ICJrYjpmb3JlbnNpY19sYWJfY29tcHV0ZXIxLXV1aWQiLAogICAgICAgICAgICAiQHR5cGUiOiAidWNvLW9ic2VydmFibGU6RGV2aWNlIiwKICAgICAgICAgICAgImxvY2F0aW9uIjogewogICAgICAgICAgICAgICAgIkBpZCI6ICJrYjpmb3JlbnNpY19sYWIxLXV1aWQiCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgICJ1Y28tY29yZTpoYXNGYWNldCI6IFsKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAiQHR5cGUiOiAidWNvLW9ic2VydmFibGU6RGV2aWNlRmFjZXQiLAogICAgICAgICAgICAgICAgICAgICJ1Y28tb2JzZXJ2YWJsZTpkZXZpY2VUeXBlIjogIkNvbXB1dGVyIiwKICAgICAgICAgICAgICAgICAgICAidWNvLW9ic2VydmFibGU6bWFudWZhY3R1cmVyIjogewogICAgICAgICAgICAgICAgICAgICAgICAiQGlkIjogImtiOm9yZ2FuaXphdGlvbi1jMjQwY2YzNy0wNTU2LTQzOWItOWE1MS0xY2E0MTczMjAxMGQiCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAidWNvLW9ic2VydmFibGU6bW9kZWwiOiAiSW5zcGlyb24gNTAwMCIsCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOnNlcmlhbE51bWJlciI6ICJEMTIzNDU2NyIKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgIkB0eXBlIjogInVjby1vYnNlcnZhYmxlOk9wZXJhdGluZ1N5c3RlbUZhY2V0IiwKICAgICAgICAgICAgICAgICAgICAidWNvLWNvcmU6bmFtZSI6ICJXaW5kb3dzIDcgVWx0aW1hdGUgRWRpdGlvbiIsCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOm1hbnVmYWN0dXJlciI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgIkBpZCI6ICJrYjpvcmdhbml6YXRpb24tY2MwZTA2NjctZWFkZi00YjJlLTk2MTgtM2Y2MmIxYmRhZTI2IgogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOnZlcnNpb24iOiAiNi4xLjc2MDEgU2VydmljZSBQYWNrIDEgQnVpbGQgNzYwMSIsCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOmluc3RhbGxEYXRlIjogewogICAgICAgICAgICAgICAgICAgICAgICAiQHR5cGUiOiAieHNkOmRhdGVUaW1lIiwKICAgICAgICAgICAgICAgICAgICAgICAgIkB2YWx1ZSI6ICIyMDE5LTA3LTEwVDE2OjMzOjQyWiIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6ICJ1Y28tb2JzZXJ2YWJsZTpDb21wdXRlclNwZWNpZmljYXRpb25GYWNldCIsCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOmJpb3NWZXJzaW9uIjogIkUxNzYySU1TLjEwTSIsCiAgICAgICAgICAgICAgICAgICAgInVjby1vYnNlcnZhYmxlOmNwdUZhbWlseSI6ICJJbnRlbCBQZW50aXVtIGk3IiwKICAgICAgICAgICAgICAgICAgICAidWNvLW9ic2VydmFibGU6dG90YWxSYW0iOiA0Mjk0OTY3Mjk2CiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6ICJ1Y28tb2JzZXJ2YWJsZTpEb21haW5OYW1lRmFjZXQiLAogICAgICAgICAgICAgICAgICAgICJ1Y28tb2JzZXJ2YWJsZTp2YWx1ZSI6ICJkZmwubG9jYWwiLAogICAgICAgICAgICAgICAgICAgICJ1Y28tb2JzZXJ2YWJsZTppc1RMRCI6IGZhbHNlCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6ICJ1Y28tb2JzZXJ2YWJsZTpJUHY0QWRkcmVzc0ZhY2V0IiwKICAgICAgICAgICAgICAgICAgICAidWNvLW9ic2VydmFibGU6YWRkcmVzc1ZhbHVlIjogIjE5Mi4xNjguMS4xNDUiCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6IFsKICAgICAgICAgICAgICAgICAgICAgICAgImFjbWU6SW52ZW50b3J5Q29tcHV0ZXJGYWNldCIsCiAgICAgICAgICAgICAgICAgICAgICAgICJ1Y28tY29yZTpGYWNldCIKICAgICAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgICAgICJhY21lOm5hbWUiOiAiREZMLTAzIiwKICAgICAgICAgICAgICAgICAgICAiYWNtZTppbnZlbnRvcnlOdW1iZXIiOiAiMTA1MDMiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0KICAgICAgICB9CiAgICBdCn0=\",\n    \"reportSyntax\": \"application/ld+json\"\n}",
+					"raw": "{\n    \"validationType\": \"full\",\n    \"embeddingMethod\": \"BASE64\",\n    \"contentSyntax\": \"application/ld+json\",\n    \"contentToValidate\": \"ewogICAgIkBjb250ZXh0IjogewogICAgICAgICJAdm9jYWIiOiAiaHR0cDovL2V4YW1wbGUub3JnL2xvY2FsIyIsCiAgICAgICAgImtiIjogImh0dHA6Ly9leGFtcGxlLm9yZy9rYi8iLAogICAgICAgICJhY21lIjogImh0dHA6Ly9jdXN0b21wYi5hY21lLm9yZy9jb3JlIyIsCiAgICAgICAgInVjby1jb3JlIjogImh0dHBzOi8vb250b2xvZ3kudW5pZmllZGN5YmVyb250b2xvZ3kub3JnL3Vjby9jb3JlLyIsCiAgICAgICAgInVjby1sb2NhdGlvbiI6ICJodHRwczovL29udG9sb2d5LnVuaWZpZWRjeWJlcm9udG9sb2d5Lm9yZy91Y28vbG9jYXRpb24vIiwKICAgICAgICAieHNkIjogImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIyIKICAgIH0sCiAgICAiQGdyYXBoIjogWwogICAgICAgIHsKICAgICAgICAgICAgIkBpZCI6ICJrYjpsb2NhdGlvbi00NTExMjE5ZS1hOTI0LTRiYTUtYWVlNy1kZmFkNWEyYzljMDUiLAogICAgICAgICAgICAiQHR5cGUiOiAidWNvLWxvY2F0aW9uOkxvY2F0aW9uIiwKICAgICAgICAgICAgInVjby1jb3JlOmhhc0ZhY2V0IjogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAaWQiOiAia2I6c2ltcGxlLWFkZHJlc3MtZmFjZXQtNTkzMzQ5NDgtMDBiOS00MzcwLTg1YjAtNGRjOGUwN2Y1Mzg0IiwKICAgICAgICAgICAgICAgICAgICAiQHR5cGUiOiAidWNvLWxvY2F0aW9uOlNpbXBsZUFkZHJlc3NGYWNldCIsCiAgICAgICAgICAgICAgICAgICAgInVjby1sb2NhdGlvbjpsb2NhbGl0eSI6ICJTZWF0dGxlIiwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOnJlZ2lvbiI6ICJXQSIsCiAgICAgICAgICAgICAgICAgICAgInVjby1sb2NhdGlvbjpwb3N0YWxDb2RlIjogIjk4MDUyIiwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOnN0cmVldCI6ICIyMDM0MSBXaGl0d29ydGggSW5zdGl0dXRlIDQwNSBOLiBXaGl0d29ydGgiCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAaWQiOiAia2I6YWNtZS1pbnRlcm5hbC1sb2NhdGlvbi1mYWNldC00MWZiMzE1OC1iYmFiLTQwNGQtOTdlNC1hYzYxZGViYjcxZjMiLAogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6IFsKICAgICAgICAgICAgICAgICAgICAgICAgImFjbWU6SW50ZXJuYWxMb2NhdGlvbkZhY2V0IiwKICAgICAgICAgICAgICAgICAgICAgICAgInVjby1jb3JlOkZhY2V0IgogICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgICAgImFjbWU6Zmxvb3IiOiAzLAogICAgICAgICAgICAgICAgICAgICJhY21lOnJvb21OdW1iZXIiOiAzNDUKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgXQogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgICAiQGlkIjogImtiOmxvY2F0aW9uLWI1NzkyNjRkLTZlMzAtNDA1NS1iZjliLTcyMzkwMzY0ZjIyNCIsCiAgICAgICAgICAgICJAdHlwZSI6ICJ1Y28tbG9jYXRpb246TG9jYXRpb24iLAogICAgICAgICAgICAidWNvLWNvcmU6aGFzRmFjZXQiOiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgIkBpZCI6ICJrYjpzaW1wbGUtYWRkcmVzcy1mYWNldC0yNThmMTY5ZS0xZTljLTQ5MzYtYmE2NS1lZWQwZjBjNjA3ODgiLAogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6ICJ1Y28tbG9jYXRpb246U2ltcGxlQWRkcmVzc0ZhY2V0IiwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOmxvY2FsaXR5IjogIlBhcmlzIiwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOmNvdW50cnkiOiAiRnJhbmNlIiwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOnBvc3RhbENvZGUiOiAiRi03NTAwMiIsCiAgICAgICAgICAgICAgICAgICAgInVjby1sb2NhdGlvbjpzdHJlZXQiOiAiMzggQmFkIEd1eSBIZWFkcXVhcnRlcnMgc3QuIgogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAiQGlkIjogImtiOmxhdC1sb25nLWNvb3JkaW5hdGVzLWZhY2V0LTM2MTI2ZjljLTAyNzMtNDhmZS1hZDRkLTZhNGUyODQ4NDU4ZiIsCiAgICAgICAgICAgICAgICAgICAgIkB0eXBlIjogInVjby1sb2NhdGlvbjpMYXRMb25nQ29vcmRpbmF0ZXNGYWNldCIsCiAgICAgICAgICAgICAgICAgICAgInVjby1sb2NhdGlvbjpsYXRpdHVkZSI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgIkB0eXBlIjogInhzZDpkZWNpbWFsIiwKICAgICAgICAgICAgICAgICAgICAgICAgIkB2YWx1ZSI6ICI0OC44NjAzNDYiCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOmxvbmdpdHVkZSI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgIkB0eXBlIjogInhzZDpkZWNpbWFsIiwKICAgICAgICAgICAgICAgICAgICAgICAgIkB2YWx1ZSI6ICIyLjMzMTE5OSIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0KICAgICAgICB9CiAgICBdCn0=\",\n    \"reportSyntax\": \"application/ld+json\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
