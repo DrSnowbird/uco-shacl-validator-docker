@@ -1,0 +1,51 @@
+
+@prefix attack: <https://ontology.adversaryengagement.org/ae/attack/> .
+@prefix identity: <https://ontology.adversaryengagement.org/ae/identity/> .
+@prefix objective: <https://ontology.adversaryengagement.org/ae/objective/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+
+
+attack:AttackPattern a owl:Class,
+        sh:NodeShape ;
+    rdfs:label "AttackPattern"@en ;
+    rdfs:comment "An attack pattern is a common approach (set of actions) utilized by a person or organization to carry out malicious activity intended to achieve some particular objective (within a particular context) against a targeted victim."@en ;
+    rdfs:subClassOf uco-action:ActionPattern ;
+    sh:property
+      [
+        sh:class engagement:Objective ;
+	sh:nodeKind sh:IRI ;
+	sh:path objective:hasObjective
+      ] ;
+    sh:targetClass attack:AttackPattern .
+
+
+
+attack:CyberKillChain a owl:Class,
+        sh:NodeShape ;
+    rdfs:label "CyberKillChain"@en ;
+    rdfs:comment "An cyber kill chain is an ordered sequence of actions or events describing a lifecycle from some framework."@en ;
+    rdfs:subClassOf uco-action:ActionLifecycle ;
+    sh:targetClass attack:CyberKillChain .
+
+
+
+
+attack:DefensePattern a owl:Class,
+        sh:NodeShape ;
+    rdfs:label "AttackPattern"@en ;
+    rdfs:comment "A defense pattern is a common approach (set of actions) utilized by a person or organization to carry out defensive activity intended to achieve some particular objective (within a particular context) against malicious activity."@en ;
+    rdfs:subClassOf uco-action:ActionPattern ;
+    sh:property
+      [
+        sh:class engagement:Objective ;
+	sh:nodeKind sh:IRI ;
+	sh:path objective:hasObjective 
+      ] ;
+    sh:targetClass attack:DefensePattern .

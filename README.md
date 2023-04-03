@@ -1,14 +1,13 @@
-# UCO-SHACL-Validator-Docker
-
-* (note) The UCO version used as default is using UCO Bug-Fix-153 branch's UCO shapes. Once the official next release of UCO SHACL shapes is published. You can re-run the bin/setup-validator-UCO-shapes-files.sh to use the latest UCO SHACL for this validator docker to use.
-
+# UCO or Any SHACL RDF Graph Validator Docker
 * A SHACL Validator customized for UCO Ontology validation
 ```
 If [ you are looking for such a requirement as a Container ]:
    Then [ this one may be for you ]
 ```
-# UCO Version
-* UCO-1.1.0
+
+# UCO Versions
+* UCO v1.2.0
+* UCO v1.1.0
 
 # Build
 * Due to Docker Hub not allowing free hosting services of pre-built images, you have to make local build to use in your environment
@@ -32,12 +31,12 @@ If [ you are looking for such a requirement as a Container ]:
   http://0.0.0.0:58088/shacl/UCO/upload
 * URI Base Validation:
   * Content to validatet: choose [ URI ] and use the sample URI: [device.json](https://raw.githubusercontent.com/casework/CASE-Examples/master/examples/illustrations/device/device.json) -- right-click and copy-and-paste the entire URL into Validator input field
-  * Validate as: choose [ Core UCO ], or [ Full UCO ]
+  * Validate as: choose [ uco, case, ae, uco-all ]
   * Content syntax choose [JSON-LD] (for the above device.json)
 
  * File Base Validation:
    * Content to validatet: choose [ File ] and click "Select File" to provide local JSON-LD file 
-   * Validate as: choose [ Core UCO ], or [ Full UCO ]
+   * Validate as: choose [ uco, case, ae, uco-all ]
    * Content syntax choose [JSON-LD] (for the above device.json) 
  
 # Stop Running
@@ -62,8 +61,8 @@ If [ you are looking for such a requirement as a Container ]:
 * [CASE Onotlogy](https://github.com/casework)
 * [Casework-Examples Github](https://github.com/casework/CASE-Examples)
 * [Casework-Examples Illustration](https://github.com/casework/CASE-Examples/tree/master/examples/illustrations)
-* [UCO App Docker (SHACL validation + RDF Store + GraphQL (Ultra GraphQL automation)](https://github.com/DrSnowbird/uco-app-docker) - to be released soon - estimated on 2023-01-31.
-  * Fully integrated automation as end-to-end pipeline:
+* [UCO App Docker (SHACL validation + RDF Store + GraphQL (Ultra GraphQL automation)](https://github.com/DrSnowbird/uco-app-docker)
+  * Integrated automation as the end-to-end pipeline:
     * User upload UCO-based ontologies, then
     * This docker will call SHACL-validator REST Service, if the compliance (v1.1.0 as latest) is successful, 
     * Then, the automation will continue to upload / convert the users's RDF/JSON-LD ontologies into RDF Store, i.e., Jena-Fuseki-Docker
@@ -84,4 +83,8 @@ If [ you are looking for such a requirement as a Container ]:
    * [HyperGraphQL-Upstream](https://github.com/hypergraphql/hypergraphql)
    * [HyperGraphQL](https://github.com/DrSnowbird/HyperGraphQL)
    * [HyperGraphQL-docker](https://github.com/DrSnowbird/HyperGraphQL-docker)
+   
+# Additional Resources
+* [Base64 Encode Online](https://www.base64encode.org/)
+
    

@@ -44,3 +44,4 @@ uco/
 
 **/docker-compose.yml
 **/.env
+**/uco

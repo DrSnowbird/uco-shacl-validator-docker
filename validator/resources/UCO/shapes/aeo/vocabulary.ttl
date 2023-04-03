@@ -1,0 +1,14 @@
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vocabulary: <https://ontology.adversaryengagement.org/ae/vocabulary/> .
+
+
+
+vocabulary:HoneypotInteractionTypeVocab a rdfs:Datatype ;
+    rdfs:label "Action Name Vocabulary"@en-US ;
+    rdfs:comment "Defines a vocabulary of honeypot interaction characteristics."@en ;
+    rdfs:subClassOf rdfs:Resource ;
+    owl:oneOf ( "High"^^vocabulary:HoneypotTypeVocab "Low"^^vocabulary:HoneypotTypeVocab "Dynamic"^^vocabulary:HoneypotTypeVocab ) .
+

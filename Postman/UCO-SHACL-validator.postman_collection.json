@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "c593913e-2fb3-4b48-a20a-d0f5b07179fc",
+		"name": "UCO-SHACL-validator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "shacl/UCO/api/validate URI Docker",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"validationType\": \"core\",\n    \"embeddingMethod\": \"URL\",\n    \"contentToValidate\": \"https://raw.githubusercontent.com/casework/CASE-Examples/master/examples/illustrations/device/device.json\",\n    \"contentSyntax\": \"application/ld+json\",\n    \"reportSyntax\": \"application/ld+json\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:58088/shacl/UCO/api/validate",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "58088",
+					"path": [
+						"shacl",
+						"UCO",
+						"api",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shacl/UCO/api/validate URI Docker Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"validationType\": \"full\",\n    \"embeddingMethod\": \"URI\",\n    \"contentToValidate\": \"https://raw.githubusercontent.com/casework/CASE-Examples/master/examples/illustrations/location/location.json\",\n    \"contentSyntax\": \"application/ld+json\",\n    \"reportSyntax\": \"application/ld+json\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:58088/shacl/UCO/api/validate",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "58088",
+					"path": [
+						"shacl",
+						"UCO",
+						"api",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shacl/UCO/api/validate BASE64 Docker",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"validationType\": \"full\",\n    \"embeddingMethod\": \"BASE64\",\n    \"contentSyntax\": \"application/ld+json\",\n    \"contentToValidate\": \"ewogICAgIkBjb250ZXh0IjogewogICAgICAgICJAdm9jYWIiOiAiaHR0cDovL2V4YW1wbGUub3JnL2xvY2FsIyIsCiAgICAgICAgImtiIjogImh0dHA6Ly9leGFtcGxlLm9yZy9rYi8iLAogICAgICAgICJhY21lIjogImh0dHA6Ly9jdXN0b21wYi5hY21lLm9yZy9jb3JlIyIsCiAgICAgICAgInVjby1jb3JlIjogImh0dHBzOi8vb250b2xvZ3kudW5pZmllZGN5YmVyb250b2xvZ3kub3JnL3Vjby9jb3JlLyIsCiAgICAgICAgInVjby1sb2NhdGlvbiI6ICJodHRwczovL29udG9sb2d5LnVuaWZpZWRjeWJlcm9udG9sb2d5Lm9yZy91Y28vbG9jYXRpb24vIiwKICAgICAgICAieHNkIjogImh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIyIKICAgIH0sCiAgICAiQGdyYXBoIjogWwogICAgICAgIHsKICAgICAgICAgICAgIkBpZCI6ICJrYjpsb2NhdGlvbi00NTExMjE5ZS1hOTI0LTRiYTUtYWVlNy1kZmFkNWEyYzljMDUiLAogICAgICAgICAgICAiQHR5cGUiOiAidWNvLWxvY2F0aW9uOkxvY2F0aW9uIiwKICAgICAgICAgICAgInVjby1jb3JlOmhhc0ZhY2V0IjogWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAaWQiOiAia2I6c2ltcGxlLWFkZHJlc3MtZmFjZXQtNTkzMzQ5NDgtMDBiOS00MzcwLTg1YjAtNGRjOGUwN2Y1Mzg0IiwKICAgICAgICAgICAgICAgICAgICAiQHR5cGUiOiAidWNvLWxvY2F0aW9uOlNpbXBsZUFkZHJlc3NGYWNldCIsCiAgICAgICAgICAgICAgICAgICAgInVjby1sb2NhdGlvbjpsb2NhbGl0eSI6ICJTZWF0dGxlIiwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOnJlZ2lvbiI6ICJXQSIsCiAgICAgICAgICAgICAgICAgICAgInVjby1sb2NhdGlvbjpwb3N0YWxDb2RlIjogIjk4MDUyIiwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOnN0cmVldCI6ICIyMDM0MSBXaGl0d29ydGggSW5zdGl0dXRlIDQwNSBOLiBXaGl0d29ydGgiCiAgICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJAaWQiOiAia2I6YWNtZS1pbnRlcm5hbC1sb2NhdGlvbi1mYWNldC00MWZiMzE1OC1iYmFiLTQwNGQtOTdlNC1hYzYxZGViYjcxZjMiLAogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6IFsKICAgICAgICAgICAgICAgICAgICAgICAgImFjbWU6SW50ZXJuYWxMb2NhdGlvbkZhY2V0IiwKICAgICAgICAgICAgICAgICAgICAgICAgInVjby1jb3JlOkZhY2V0IgogICAgICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAgICAgImFjbWU6Zmxvb3IiOiAzLAogICAgICAgICAgICAgICAgICAgICJhY21lOnJvb21OdW1iZXIiOiAzNDUKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgXQogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgICAiQGlkIjogImtiOmxvY2F0aW9uLWI1NzkyNjRkLTZlMzAtNDA1NS1iZjliLTcyMzkwMzY0ZjIyNCIsCiAgICAgICAgICAgICJAdHlwZSI6ICJ1Y28tbG9jYXRpb246TG9jYXRpb24iLAogICAgICAgICAgICAidWNvLWNvcmU6aGFzRmFjZXQiOiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgIkBpZCI6ICJrYjpzaW1wbGUtYWRkcmVzcy1mYWNldC0yNThmMTY5ZS0xZTljLTQ5MzYtYmE2NS1lZWQwZjBjNjA3ODgiLAogICAgICAgICAgICAgICAgICAgICJAdHlwZSI6ICJ1Y28tbG9jYXRpb246U2ltcGxlQWRkcmVzc0ZhY2V0IiwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOmxvY2FsaXR5IjogIlBhcmlzIiwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOmNvdW50cnkiOiAiRnJhbmNlIiwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOnBvc3RhbENvZGUiOiAiRi03NTAwMiIsCiAgICAgICAgICAgICAgICAgICAgInVjby1sb2NhdGlvbjpzdHJlZXQiOiAiMzggQmFkIEd1eSBIZWFkcXVhcnRlcnMgc3QuIgogICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICAiQGlkIjogImtiOmxhdC1sb25nLWNvb3JkaW5hdGVzLWZhY2V0LTM2MTI2ZjljLTAyNzMtNDhmZS1hZDRkLTZhNGUyODQ4NDU4ZiIsCiAgICAgICAgICAgICAgICAgICAgIkB0eXBlIjogInVjby1sb2NhdGlvbjpMYXRMb25nQ29vcmRpbmF0ZXNGYWNldCIsCiAgICAgICAgICAgICAgICAgICAgInVjby1sb2NhdGlvbjpsYXRpdHVkZSI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgIkB0eXBlIjogInhzZDpkZWNpbWFsIiwKICAgICAgICAgICAgICAgICAgICAgICAgIkB2YWx1ZSI6ICI0OC44NjAzNDYiCiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAidWNvLWxvY2F0aW9uOmxvbmdpdHVkZSI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgIkB0eXBlIjogInhzZDpkZWNpbWFsIiwKICAgICAgICAgICAgICAgICAgICAgICAgIkB2YWx1ZSI6ICIyLjMzMTE5OSIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIF0KICAgICAgICB9CiAgICBdCn0=\",\n    \"reportSyntax\": \"application/ld+json\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:58088/shacl/UCO/api/validate",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "58088",
+					"path": [
+						"shacl",
+						"UCO",
+						"api",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:58088/shacl/api/info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://0.0.0.0:58088/shacl/api/info",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "58088",
+					"path": [
+						"shacl",
+						"api",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://0.0.0.0:58088/shacl/UCO/api/info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://0.0.0.0:58088/shacl/UCO/api/info",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "58088",
+					"path": [
+						"shacl",
+						"UCO",
+						"api",
+						"info"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

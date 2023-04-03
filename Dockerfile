@@ -42,7 +42,7 @@ RUN sudo chown -R ${USER}:${USER} ${APP_HOME} && \
 ##
 ## (use the lines below instead of the above when the remote site is not available!)
 ##
-COPY --chown=${USER}:${USER} validator ${APP_HOME}/validator
+#COPY --chown=${USER}:${USER} validator ${APP_HOME}/validator
 COPY --chown=${USER}:${USER} scripts/run-validator-as-java-inside-docker.sh ${APP_HOME}/run-validator-as-java-inside-docker.sh
 COPY --chown=${USER}:${USER} jar/validator.jar ${APP_HOME}/validator/validator.jar 
 #RUN ls -al ${APP_HOME} && find ${APP_HOME}

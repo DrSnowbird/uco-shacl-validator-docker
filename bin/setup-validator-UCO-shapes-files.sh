@@ -97,20 +97,29 @@ cat << EOF >> ${VALIDATOR_RESOURCES_CONFIG}
 # ref: https://www.itb.ec.europa.eu/docs/guides/latest/validatingRDF/index.html#guide-validatingrdf-references-validator-props
 
 # The title to display for the validator's user interface.
-validator.uploadTitle = UCO SHACL-based RDF Graph Validator
+validator.uploadTitle = UCO SHACL-based RDF Graph Validator (${UCO_VERSION})
 
-validator.type = core, full
+validator.type = uco,case,ae,uco_all
 # Labels to describe the defined types.
 
-validator.typeLabel.core = Core UCO
-validator.typeLabel.full = Full UCO
+validator.typeLabel.uco = uco
+validator.typeLabel.case = case
+validator.typeLabel.ae = ae
+validator.typeLabel.uco_all = uco_all
 
-# Validation artefacts (SHACL shapes) to consider for the "core" type.
-validator.shaclFile.core = shapes/co.ttl,shapes/owl.ttl,shapes/core.ttl
+# Validation artefacts (SHACL shapes) to consider for the "uco" type.
+validator.shaclFile.uco = ${SHAPES_LIST}
 
-# Validation artefacts (SHACL shapes) to consider for the "full" type.
-#validator.shaclFile.full = shapes/PurchaseOrder-common-shapes.ttl, shapes/PurchaseOrder-large-shapes.ttl
-validator.shaclFile.full = ${SHAPES_LIST}
+# -- Validation artefacts (SHACL shapes) to consider for the "case" type.
+validator.shaclFile.case = ${SHAPES_LIST},shapes/case-unstable.ttl
+
+# -- Validation artefacts (SHACL shapes) to consider for the "ae" type.
+validator.shaclFile.ae = ${SHAPES_LIST},shapes/ae_ontology.ttl
+
+# -- Validation artefacts (SHACL shapes) to consider for the "uco_all" type.
+validator.shaclFile.uco_all = ${SHAPES_LIST},shapes/case-unstable.ttl,shapes/ae_ontology.ttl
+
+
 EOF
 }
 generate_validator_resource_config
